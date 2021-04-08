@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+</head>
+<body>
+    <form class ="Loginpage" action="Register" method ="Post">
+        {% csrf_token %}
+
+        <input type="text" name="First_name" placeholder="Enter Name">
+        <input type="text" name="Username" placeholder="Enter Username">
+        <input type="email" name="EmailId" placeholder="Enter Email Id">
+        <input type="password" name="Password1" placeholder="Enter Password">
+        <input type="password" name="Password2" placeholder="Confirm Password">
+        <input type="submit" name="Submit" value="Login">
+    </form>
+    <div class="m">
+        {% for message in messages %}
+        <h4>{{message}}</h4>
+        {% endfor %}
+    </div>
+    
+</body>
+</html>  

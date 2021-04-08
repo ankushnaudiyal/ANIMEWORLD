@@ -1,0 +1,264 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIME WORLD</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/lightslider.css' %}"/>
+    <script src="{% static 'js/JQuery3.3.1.js' %}"></script>
+    <script src="{% static 'js/lightslider.js' %}"></script>
+    <!--fav icon-->
+    <link rel="icon" href="{% static 'images/favicon.ico' %}"/>
+    <!--using Fontawesome-->
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script> 
+
+
+</head>
+<body>
+    <nav>
+        <a href="#" class="logo">
+            <img src="{% static 'images/logo.jfif' %}">
+
+        </a>
+        <!--Menu-->
+
+        <input type="checkbox" class="MenuButton" id="MenuButton"/>
+        <label class="menu-icon" for="MenuButton">
+            <span class="nav-icon"></span>
+        </label>
+        
+        
+        
+         
+        
+        
+        <ul class="Menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Anime List</a></li>
+            <li><a href="#">Ongoing</a></li>
+            <li><a href="#">Recently Added</a></li>
+            <li><a href="#">Top Rated</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="#">HELLO,{{user.first_name}}</a></li>
+            <li><a href="userinfo/logout">Logout</a></li>
+            {% else %}
+            <li><a href="userinfo/Register">Register</a></li>
+            <li><a href="userinfo/login">Login</a></li>
+            {% endif %}
+            
+        </ul>
+        <!--Searching-->
+        <div class="Search">
+            <input type="text" placeholder="Search Here!"/>
+            <!--Icon-->
+            <i class="fas fa-search"></i> 
+         </div>
+
+    </nav>
+    
+    
+    
+    
+    
+    <section id="Main">
+        <!--Showcase-->
+        
+        <h4 class="hotanime-heading">HOT ANIME</h4>
+        
+        <ul id="autoWidth" class="cs-hidden">
+            <li class="item1">
+                <div class="anime-box">
+                    <img src="{% static 'images/wp4410476-dr-stone-wallpapers.jpg' %}">
+                </div>
+            </li>
+            <li class="item2">
+                <div class="anime-box">
+                    <img src="{% static 'images/jujutsu kaisen.jpg' %} ">
+                </div>
+            </li>
+            <li class="item3">
+                <div class="anime-box">
+                    <img src="{% static 'images/boruto.png' %}">
+                </div>
+            </li>
+            <li class="item4">
+                <div class="anime-box">
+                    <img src="{% static 'images/one punch.jpg' %}">
+                </div>
+            </li>
+            <li class="item5">
+                <div class="anime-box">
+                    <img src="{% static 'images/hayikiuu.jpg' %}">
+                </div>
+            </li>
+            
+          </ul>
+
+     </section>
+    
+    
+    
+    <section id="Latest">
+        <h4 class="latestanime">Latest Anime</h4>
+        <ul id="autoWidth2" class="cs-hidden">
+            {% for anime in animes %}
+            <li class="item-a">
+                <div class="latestbox">
+                 <div class="latestbimg">
+                    <img src="{{anime.img.url}}" alt="">
+                 </div> 
+                 <div class="animetitle">
+                     <strong>{{anime.name}}</strong>
+                     <p>{{anime.desc}}</p>
+                 </div> 
+                </div>
+                {% endfor %}
+            
+            </li> 
+        </ul>
+
+    </section>
+    
+    
+    
+    
+    
+    <div class="popular">
+        <h4>Popular Anime</h4>
+    </div>
+    <section id="popular-anime-list">
+        <div class="popularbox">
+           <div class="popular-anime img">
+               <div class="Rank">#1</div>
+               <img src="{% static 'images/wp4410476-dr-stone-wallpapers.jpg' %}">
+           </div>
+           <a href="#">
+           Dr. Stone(2019)(Japenense Dub,English Sub,1080p)
+           </a>
+
+        </div>
+        <div class="popularbox">
+            <div class="popular-anime img">
+                <div class="audio">#2</div>
+                <img src="{% static 'images/jujutsu kaisen.jpg'%}">
+            </div>
+            <a href="#">
+            Dr. Stone(2019)(Japenense Dub,English Sub,1080p)
+            </a>
+ 
+         </div>
+         <div class="popularbox">
+            <div class="popular-anime img">
+                <div class="audio">#3</div>
+                <img src="{% static 'images/boruto.png' %}">
+            </div>
+            <a href="#">
+            Dr. Stone(2019)(Japenense Dub,English Sub,1080p)
+            </a>
+ 
+         </div>
+         <div class="popularbox">
+            <div class="audio">#4</div>
+            <div class="popular-anime img">
+                <img src="{% static 'images/hayikiuu.jpg' %}">
+            </div>
+            <a href="#">
+            Dr. Stone(2019)(Japenense Dub,English Sub,1080p)
+            </a>
+ 
+         </div>
+         <div class="popularbox">
+            <div class="popular-anime img">
+                <div class="audio">#5</div>
+                <img src="{%static 'images/one punch.jpg' %}">
+            </div>
+            <a href="#">
+            Dr. Stone(2019)(Japenense Dub,English Sub,1080p)
+            </a>
+ 
+         </div>
+         <div class="popularbox">
+            <div class="popular-anime img">
+                <div class="audio">#6</div>
+                <img src="{% static 'images/boruto.png' %}">
+            </div>
+            <a href="#">
+            Dr. Stone(2019)(Japenense Dub,English Sub,1080p)
+            </a>
+ 
+         </div>
+         <div class="popularbox">
+            <div class="popular-anime img">
+                <div class="audio">#7</div>
+                <img src="{% static 'images/hayikiuu.jpg'%}">
+            </div>
+            <a href="#">
+            Dr. Stone(2019)(Japenense Dub,English Sub,1080p)
+            </a>
+ 
+         </div>
+         <div class="popularbox">
+            <div class="popular-anime img">
+                <div class="audio">#8</div>
+                <img src="{% static 'images/one punch.jpg' %}">
+            </div>
+            <a href="#">
+            Dr. Stone(2019)(Japenense Dub,English Sub,1080p)
+            </a>
+ 
+         </div>
+         <div class="popularbox">
+            <div class="popular-anime img">
+                <div class="audio">#9</div>
+                <img src="{% static 'images/wp4410476-dr-stone-wallpapers.jpg' %}">
+            </div>
+            <a href="#">
+            Dr. Stone(2019)(Japenense Dub,English Sub,1080p)
+            </a>
+ 
+         </div>
+
+    </section>
+    
+
+
+   
+    
+    
+    <div class="Buttons">
+        <a href="#">PREVIOUS</a>
+        <a href="#">NEXT</a>
+    </div>
+
+    <!---Footer-->
+    <footer>
+        <p>Anime World</p>
+        <p>Copyright 2021 - ANIME WORLD </p>
+    </footer>
+
+
+    
+    
+    
+    
+    
+    
+    
+    <script>
+        $(document).ready(function() {
+            $('#autoWidth,#autoWidth2').lightSlider({
+                autoWidth:true,
+                loop:true,
+                onSliderLoad: function() {
+                    $('#autoWidth , #autoWidth2').removeClass('cS-hidden');
+                } 
+            });  
+          });
+    </script>
+    
+</body>
+</html> 

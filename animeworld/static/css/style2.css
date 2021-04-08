@@ -1,0 +1,85 @@
+body{
+    margin:0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:url(../images/bg.jpg);
+    background-size: cover;
+}
+.Loginpage{
+    width: 300px;
+    padding: 30px;
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: transparent;
+    text-align: center;
+    
+    
+}
+
+.Loginpage input[type="text"], .Loginpage input[type="password"]
+{
+    border:0;
+    background: transparent;
+    display: block;
+    margin:20px auto;
+    text-align: center;
+    border: 3px solid #0367fd;
+    padding:14px 10px;
+    width: 220px;
+    outline: none;
+    color:white;
+    border-radius: 24px;
+    transition: 0.25px;
+    
+
+
+}
+.Loginpage input[type="text"], .Loginpage input[type="password"]{
+    width: 270px;
+    border-color: #ae00ffec;
+}
+.Loginpage input[type="submit"]{
+    border: 0;
+    background: transparent;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #ae00ffec;
+    padding: 14px  35px;
+    outline: none;
+    color:white;
+    border-radius: 24px;
+    transition: 0.25px;
+    cursor: pointer;
+}
+.Loginpage input[type="submit"]:hover{
+    background: #ae00ffec;
+}
+.Loginpage input[type="email"]{
+    border: 0;
+    background: transparent;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #ae00ffec;
+    width: 220px;
+    padding: 14px  35px;
+    outline: none;
+    color:white;
+    border-radius: 24px;
+    transition: 0.25px;
+    cursor: pointer;
+
+}
+.m h4{
+    position: absolute;
+    bottom:0;
+    width: 50%;
+    left:50%;
+    margin-left: -25%;
+    text-align: center;
+    color:fuchsia ;
+}
+
